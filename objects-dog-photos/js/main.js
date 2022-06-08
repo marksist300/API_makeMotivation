@@ -27,4 +27,7 @@ fetch('https://dog.ceo/api/breeds/image/random')
         likes: ['Long walks & Sunshine', 'Pina Coladas & long walks in the rain', 'disco boogey', 'Food & farting', 'Sleeping & chasing rabbits', 'Movies with animals in', 'Other dogs'],
         dislikes: ['The neighbour','Other dogs','Cats','Dried food','The postman','Traffic','Sarcasm','Communists',],
         fact: ['Saved a local boy trapped down a well','Understands sign language','Farts at least once an hour','Is afraid of cats']
+
+        // Need to set methods to randomise the selection of the above gender and properties
+
     }
