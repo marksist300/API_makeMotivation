@@ -13,18 +13,21 @@
 	</head>
 	<body>
 		<h1>Dog app</h1>
-		<h2>Select a breed of dog for more info</h2>
-
-		<div class="photo-box">
+		<section class="photo-box">
+			<label for="selection-box">Select a breed of dog for more info</label>
 			<select class="selection-box">
 				<option selected disabled value="default">Breeds</option>
 			</select>
-			<img src="" alt="">
-		</div>
-
-		<div class="info-box">
-
-		</div>
+			<img src="https://images.dog.ceo/breeds/spaniel-cocker/n02102318_12008.jpg" alt="Picture of various breeds of dogs go here">
+		</section>
+		<br>
+		<section class="info-box">
+			<h4>Name: <span class="spans" id="name">Louie</span></h4>
+			<h4>Gender: <span id="gender">Male</span></h4>
+			<h4>Likes: <span id="likes">Treate & biscuits</span></h4>
+			<h4>Dislikes: <span id="dislikes">Lethargic youths</span></h4>
+			<h4>Fact: <span id="facts">Knows many tricks</span></h4>
+		</section>
 			
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
