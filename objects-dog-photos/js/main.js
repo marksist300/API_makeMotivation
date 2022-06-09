@@ -1,5 +1,5 @@
 // Get a dog photo from the dog.ceo api and place the photo in the DOM
-
+const selectBox = document.querySelector('.selection-box');
 const output = document.querySelector('img');
 const genderOutput = document.querySelector('#gender')
 const nameOutput = document.querySelector('#name');
@@ -12,12 +12,22 @@ fetch('https://dog.ceo/api/breeds/list/all')
     .then(res=> res.json())
     .then(data=>{
         let dogNames = Object.keys(data.message);
-        console.log(dogNames);
+        selectorNames(dogNames)
     })
     .catch(err=> {
         console.log(`Error: ${err}`)
     })
 
+function selectorNames(dogNames) {
+    dogNames.map(name=>{
+        let elem = document.createElement('option')
+        elem.innerText = name;
+        selectBox.appendChild(elem)
+    })
+    console.log(selectBox)
+}
+
+selectorNames()
 
 // MF a propert to be randomly set to 'Male' or 'Female'
 // rname: if MF = Male, to receive a male name (mNames) and output it to the DOM
