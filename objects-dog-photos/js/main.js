@@ -36,6 +36,11 @@ function selectBreed(){
     .then(res=> res.json())
     .then(data=>{
         imageOutput.src =data.message;
+        doggoInfo.pickGender();
+        doggoInfo.assignAge();
+        doggoInfo.assignDislikes();
+        doggoInfo.assignLikes();
+        doggoInfo.pickFacts();
     })
     .catch(err=> {
         console.log(`Error: ${err}`)   
