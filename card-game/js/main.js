@@ -36,6 +36,8 @@ const drawCards = {
     p2InitialDraw: true,
     p1cardCount: 2,
     p2cardCount: 2,
+    p1Score: 0,
+    p2Score: 0,
 
     player1drawCard: function(){
         if(this.p1IntialDraw === true) {
@@ -47,7 +49,7 @@ const drawCards = {
         .then (res=> res.json())
         .then(data => {
             let values = Array.from(data.cards)
-            console.log(values.forEach(elem=>console.log(elem.value)))
+            console.log(values.forEach(elem=> this.p1totalScore(elem.value)))
             this.p1IntialDraw = false;
         })
         .catch(err=>{
@@ -71,6 +73,32 @@ const drawCards = {
             console.log(`Error: ${err}`)
         });
     },
+
+    p1totalScore: function(card){
+        switch(card){
+            case 'ACE':
+                card = Number(14);
+                break;
+            case 'KING':
+                card = Number(13);
+                break
+            case 'QUEEN':
+                card = Number(12);
+                break
+            case 'JACK':
+                card= Number(11);
+                break
+            default:
+                card = Number(card);
+                break
+        }
+        this.p1Score += card;
+        p1Score.innerText = card
+    },
+
+    p2totalScore: function(card){
+        
+    }
 }
 
 
