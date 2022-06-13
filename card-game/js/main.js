@@ -3,20 +3,20 @@ const p1CardPick = document.querySelector('#player1CardPick');
 const p2CardPick = document.querySelector('#player2CardPick');
 const p1CardIMG = document.querySelector('#player1sCard');
 const p2CardIMG = document.querySelector('#player2sCard');
+const p1Score = document.querySelector('#play1Score');
+const p2Score = document.querySelector('#play2Score')
 const winnerOutput = document.querySelector('#winner');
 
+// Taking the deck from the API and storing it in a variable:
 let deck = null;
-function deckInfo(deckValue){
+
+function setDeck(deckValue){
     if(deck === null){
         deck = deckValue
         console.log(deck)
     } else {
         return deck;
     }
-};
-
-function setDeck(deckValue){
-    deckInfo(deckValue);
 }
 
 (function fetchDeck(){
@@ -46,9 +46,9 @@ const drawCards = {
         fetch(`https://deckofcardsapi.com/api/deck/${deck}/draw/?count=${this.p1cardCount}`)
         .then (res=> res.json())
         .then(data => {
-            this.p1IntialDraw = false;
             let values = Array.from(data.cards)
-            values.length > 1? console.log(values.forEach(elem=> elem.value)): console.log(values[0].value);
+            console.log(values.forEach(elem=>console.log(elem.value)))
+            this.p1IntialDraw = false;
         })
         .catch(err=>{
             console.log(`Error: ${err}`)
