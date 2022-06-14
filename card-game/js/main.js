@@ -38,9 +38,14 @@ const drawCards = {
     p2cardCount: 2,
     p1Score: 0,
     p2Score: 0,
+    p1Bust: false,
+    p2Bust: false,
 
     player1drawCard: function(){
-        if(this.p1IntialDraw === true) {
+        if(this.p2Bust === true) {
+            console.log ('read')
+            return
+        } else if(this.p1IntialDraw === true) {
             this.p1cardCount = 2;
         } else {
             this.p1cardCount = 1;
@@ -49,6 +54,7 @@ const drawCards = {
         .then (res=> res.json())
         .then(data => {
             let values = Array.from(data.cards)
+            console.log(values)
             console.log(values.forEach(elem=> this.p1totalScore(elem.value)))
             this.p1IntialDraw = false;
         })
@@ -58,7 +64,9 @@ const drawCards = {
     },
 
     player2drawCard: function (){
-        if(this.p2InitialDraw === true) {
+        if(this.p2Bust === true) {
+            return
+        } else if(this.p2InitialDraw === true) {
             this.p2cardCount = 2;
         } else {
             this.p2cardCount = 1;
@@ -66,6 +74,9 @@ const drawCards = {
         fetch(`https://deckofcardsapi.com/api/deck/${deck}/draw/?count=${this.p2cardCount}`)
         .then (res=> res.json())
         .then(data => {
+            let values = Array.from(data.cards)
+            console.log(values)
+            console.log(values.forEach(elem=> this.p2totalScore(elem.value)))
             this.p2InitialDraw = false;
             console.log(data);
         })
@@ -78,26 +89,62 @@ const drawCards = {
         switch(card){
             case 'ACE':
                 card = Number(14);
+                this.p1Score += card;
                 break;
             case 'KING':
                 card = Number(13);
+                this.p1Score += card;
                 break
             case 'QUEEN':
                 card = Number(12);
+                this.p1Score += card;
                 break
             case 'JACK':
                 card= Number(11);
+                this.p1Score += card;
                 break
             default:
                 card = Number(card);
+                this.p1Score += card;
                 break
         }
-        this.p1Score += card;
-        p1Score.innerText = card
+        if(this.p1Score>21){
+            p1Score.innerText = 'Bust';
+            this.p1Bust = true;
+        } else {
+            p1Score.innerText = this.p1Score;
+        }
     },
 
     p2totalScore: function(card){
-        
+        switch(card){
+            case 'ACE':
+                card = Number(14);
+                this.p2Score += card;
+                break;
+            case 'KING':
+                card = Number(13);
+                this.p2Score += card;
+                break
+            case 'QUEEN':
+                card = Number(12);
+                this.p2Score += card;
+                break
+            case 'JACK':
+                card= Number(11);
+                this.p2Score += card;
+                break
+            default:
+                card = Number(card);
+                this.p2Score += card;
+                break
+        }
+        if(this.p2Score>21){
+            p2Score.innerText = 'Bust'
+            this.p2Bust = true;
+        } else {
+            p2Score.innerText = this.p2Score;
+        }
     }
 }
 
