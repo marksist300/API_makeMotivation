@@ -42,7 +42,7 @@ const drawCards = {
     p2Bust: false,
 
     player1drawCard: function(){
-        if(this.p2Bust === true) {
+        if(this.p1Bust === true) {
             console.log ('read')
             return
         } else if(this.p1IntialDraw === true) {
@@ -55,7 +55,10 @@ const drawCards = {
         .then(data => {
             let values = Array.from(data.cards)
             console.log(values)
-            console.log(values.forEach(elem=> this.p1totalScore(elem.value)))
+            console.log(values.forEach(elem=> {
+                this.p1totalScore(elem.value);
+                this.p1AppendImage(elem.image);
+            }));
             this.p1IntialDraw = false;
         })
         .catch(err=>{
@@ -76,9 +79,12 @@ const drawCards = {
         .then(data => {
             let values = Array.from(data.cards)
             console.log(values)
-            console.log(values.forEach(elem=> this.p2totalScore(elem.value)))
+            console.log(values.forEach(elem=> {
+                this.p2totalScore(elem.value);
+                this.p2AppendImage(elem.image);
+            }));
             this.p2InitialDraw = false;
-            console.log(data);
+
         })
         .catch(err=>{
             console.log(`Error: ${err}`)
@@ -145,6 +151,18 @@ const drawCards = {
         } else {
             p2Score.innerText = this.p2Score;
         }
+    },
+
+    p1AppendImage: function(val){
+        let image = document.createElement('img');
+        image.setAttribute('src', val);
+        p1CardIMG.appendChild(image);
+    },
+
+    p2AppendImage: function(val){
+        let image = document.createElement('img');
+        image.setAttribute('src', val);
+        p2CardIMG.appendChild(image);
     }
 }
 
