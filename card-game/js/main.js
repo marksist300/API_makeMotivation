@@ -20,10 +20,10 @@ function setDeck(deckValue){
 }
 
 (function fetchDeck(){
-    fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
+    fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6")
     .then(res=> res.json())
     .then(data=> {
-        // console.log(data.deck_id)
+        console.log(data)
         setDeck(data.deck_id)
     })
     .catch(err => {
@@ -56,8 +56,7 @@ const drawCards = {
             let values = Array.from(data.cards)
             console.log(values)
             console.log(values.forEach(elem=> {
-                this.p1totalScore(elem.value);
-                this.p1AppendImage(elem.image);
+                this.p1totalScore(elem.value, elem.image);
             }));
             this.p1IntialDraw = false;
         })
@@ -80,8 +79,8 @@ const drawCards = {
             let values = Array.from(data.cards)
             console.log(values)
             console.log(values.forEach(elem=> {
-                this.p2totalScore(elem.value);
-                this.p2AppendImage(elem.image);
+                this.p2totalScore(elem.value, elem.image);
+                // this.p2AppendImage(elem.image);
             }));
             this.p2InitialDraw = false;
 
@@ -91,7 +90,7 @@ const drawCards = {
         });
     },
 
-    p1totalScore: function(card){
+    p1totalScore: function(card, image){
         switch(card){
             case 'ACE':
                 card = Number(14);
@@ -115,14 +114,19 @@ const drawCards = {
                 break
         }
         if(this.p1Score>21){
+            if(this.p1Bust === false){
+            this.p1AppendImage(image)
+            }
             p1Score.innerText = 'Bust';
             this.p1Bust = true;
+            winnerOutput.innerText = 'Player 2 Wins!';
         } else {
+            this.p1AppendImage(image)
             p1Score.innerText = this.p1Score;
         }
     },
 
-    p2totalScore: function(card){
+    p2totalScore: function(card, image){
         switch(card){
             case 'ACE':
                 card = Number(14);
@@ -146,22 +150,27 @@ const drawCards = {
                 break
         }
         if(this.p2Score>21){
+            if(this.p2Bust === false){
+            this.p2AppendImage(image)
+            }
             p2Score.innerText = 'Bust'
             this.p2Bust = true;
+            winnerOutput.innerText = 'Player 1 Wins!';
         } else {
+            this.p2AppendImage(image)
             p2Score.innerText = this.p2Score;
         }
     },
 
     p1AppendImage: function(val){
         let image = document.createElement('img');
-        image.setAttribute('src', val);
+        image.src= val;
         p1CardIMG.appendChild(image);
     },
 
     p2AppendImage: function(val){
         let image = document.createElement('img');
-        image.setAttribute('src', val);
+        image.src= val;
         p2CardIMG.appendChild(image);
     }
 }
