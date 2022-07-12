@@ -40,7 +40,7 @@ const drawCards = {
     p2Score: 0,
     p1Bust: false,
     p2Bust: false,
-
+    
     player1drawCard: function(){
         if(this.p1Bust === true) {
             console.log ('read')
@@ -80,7 +80,6 @@ const drawCards = {
             console.log(values)
             console.log(values.forEach(elem=> {
                 this.p2totalScore(elem.value, elem.image);
-                // this.p2AppendImage(elem.image);
             }));
             this.p2InitialDraw = false;
 
