@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Make Motivation</title>
+</head>
+<body>
+    <h1>Make Motivation</h1>
+    <form action="/motivate" method="POST">
+        <input type="text" placeholder="Enter quote here" name="quoteBox">
+        <button type="submit">Submit</button>
+    </form>
+    <section class="quote-section">
+        <h2>Words of Motivation</h2>
+        <ul class="quote-list">
+            <% for(let i= 0; i<quotes.length; i++) {%>
+                <li class="quote">
+                    <span><%= quotes[i].quoteBox %></span>
+                </li>
+            <%} %>
+        </ul>
+    </section>
+
+    <section class="update-section">
+        <h2>Replace quote with random quotation</h2>
+        <button id="random-quote-update">Motivate!</button>
+    </section>
+
+    <script rel="text/javascript" src= "main.js"></script>
+</body>
+</html>
