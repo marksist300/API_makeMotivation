@@ -4,12 +4,13 @@ const bodyParser = require("body-parser")
 const MongoClient = require("mongodb").MongoClient;
 const MONGO_KEY = require("./keys.json");
 const MONGODB_PWD = MONGO_KEY.MongoDB_Secret;
+const MONGODB_USER = MONGO_KEY.MongoDB_User;
 const PORT = 3000;
 
 
 app.set("view engine", "ejs");
 app.use(express.static('public'));
-MongoClient.connect(`mongodb+srv://marktlinn:${MONGODB_PWD}@cluster0.nk23j.mongodb.net/motivatorMaker?retryWrites=true&w=majority`,
+MongoClient.connect(`mongodb+srv://${MONGODB_USER}:${MONGODB_PWD}@cluster0.nk23j.mongodb.net/motivatorMaker?retryWrites=true&w=majority`,
  {useUnifiedTopology: true})
     .then(client => {
         console.log('Connection to database established...')
