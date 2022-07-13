@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require("body-parser")
 const MongoClient = require("mongodb").MongoClient;
 const MONGO_KEY = require("./keys.json");
+const { request } = require("express");
 const MONGODB_PWD = MONGO_KEY.MongoDB_Secret;
 const MONGODB_USER = MONGO_KEY.MongoDB_User;
 const PORT = 3000;
@@ -40,7 +41,20 @@ MongoClient.connect(`mongodb+srv://${MONGODB_USER}:${MONGODB_PWD}@cluster0.nk23j
             .catch(err=> console.log(`POST Error: ${err}`))
         });
         app.put("/update", (req,res)=>{
-            console.log(req.body)
+            quoteCollection.findOneAndUpdate(
+                { quoteBox: req.body.oldQuote },
+                {
+                    $set: {
+                      quoteBox: req.body.newQuote,
+                    }
+                  },
+                  {
+                      upsert: true
+                  }
+              )
+                .then(result => {console.log(result)})
+                .catch(error => console.error(error))
+                  res.redirect("/");
         })
         app.listen(PORT, ()=>{
             console.log(`Listening on port: ${PORT}`);

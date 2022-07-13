@@ -18,16 +18,18 @@
         <ul class="quote-list">
             <% for(let i= 0; i<quotes.length; i++) {%>
                 <li class="quote">
-                    <span><%= quotes[i].quoteBox %></span>
+                    <span id="quote-<%=i%>"><%= quotes[i].quoteBox %></span>
+                    <button id="random-quote-update<%=i%>" class="update-quote btn">Update with Random Quote</button>
+                    <button class="delete-quote btn">Delete</button>
                 </li>
             <%} %>
         </ul>
     </section>
 
-    <section class="update-section">
+    <!-- <section class="update-section">
         <h2>Replace quote with random quotation</h2>
         <button id="random-quote-update">Motivate!</button>
-    </section>
+    </section> -->
 
     <script rel="text/javascript" src= "main.js"></script>
 </body>
