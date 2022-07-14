@@ -23,7 +23,6 @@ MongoClient.connect(`mongodb+srv://${MONGODB_USER}:${MONGODB_PWD}@cluster0.nk23j
             db.collection("motivate").find().toArray()
             .then(data=> {
                 res.render("index.ejs", {quotes: data});
-                // console.log(data) 
             })
             .catch (err=> {
                 res.status(400).send("<h1>400: Page Not Found</h1>")

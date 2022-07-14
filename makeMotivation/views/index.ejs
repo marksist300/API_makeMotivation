@@ -5,21 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway&display=swap" rel="stylesheet">
     <title>Make Motivation</title>
 </head>
 <body>
     <h1>Make Motivation</h1>
     <form action="/motivate" method="POST">
         <input type="text" placeholder="Enter quote here" name="quoteBox">
-        <button type="submit">Submit</button>
+        <button class="submit-btn" type="submit">Submit</button>
     </form>
     <section class="quote-section">
         <h2>Words of Motivation</h2>
         <ul class="quote-list">
             <% for(let i= 0; i<quotes.length; i++) {%>
                 <li class="quote">
-                    <span class="span-item" id="quote-<%=i%>"><%= quotes[i].quoteBox %></span>
-                    <div class="span-buttons">
+                    <q class="quote-item" id="quote-<%=i%>"><%= quotes[i].quoteBox %></q>
+                    <div class="quote-buttons">
                         <button id="random-quote-update<%=i%>" class="update-quote btn">Update with Random Quote</button>
                         <button id="deleteBtn-<%=i%>"class="delete-quote btn">Delete</button>
                     </div>

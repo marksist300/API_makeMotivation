@@ -1,9 +1,11 @@
 const updateBtn = document.querySelectorAll(".update-quote");
 const deleteBtn = document.querySelectorAll(".delete-quote");
+const templateQuoteString = document.getElementById("quote-0");
 const templateQuoteBtn = document.getElementById("random-quote-update0");
 const templateDeleteBtn = document.getElementById("deleteBtn-0");
 templateQuoteBtn.style.display = "none";
 templateDeleteBtn.style.display = "none";
+templateQuoteString.style.display = "none";
 
 const QUOTE_DATA = {
     "quote": "One cannot step twice into the same river"
