@@ -52,9 +52,11 @@ MongoClient.connect(`mongodb+srv://${MONGODB_USER}:${MONGODB_PWD}@cluster0.nk23j
                       upsert: true
                   }
               )
-                .then(result => {console.log(result)})
+                .then(result => {
+                    console.log(result)
+                    res.redirect("/")
+                })
                 .catch(error => console.error(error))
-                  res.redirect("/");
         })
         app.listen(PORT, ()=>{
             console.log(`Listening on port: ${PORT}`);

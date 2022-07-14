@@ -19,9 +19,9 @@ async function putReq() {
         })
         const data = await response.json();
         console.log(data);
-        location.reload();
-    }
+        }
     catch(err){
         console.log('Errors with fetch: ', err)
     }
+    location.reload();
     }
