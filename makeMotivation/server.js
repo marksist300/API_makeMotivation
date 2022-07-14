@@ -23,7 +23,7 @@ MongoClient.connect(`mongodb+srv://${MONGODB_USER}:${MONGODB_PWD}@cluster0.nk23j
             db.collection("motivate").find().toArray()
             .then(data=> {
                 res.render("index.ejs", {quotes: data});
-                console.log(data) 
+                // console.log(data) 
             })
             .catch (err=> {
                 res.status(400).send("<h1>400: Page Not Found</h1>")
@@ -35,7 +35,7 @@ MongoClient.connect(`mongodb+srv://${MONGODB_USER}:${MONGODB_PWD}@cluster0.nk23j
             let quote = req.body;
             quoteCollection.insertOne(quote)
             .then(data=> {
-                console.log(`Data: ${data}`)
+                // console.log(`Data: ${data}`)
                 res.redirect("/");
             })
             .catch(err=> console.log(`POST Error: ${err}`))
@@ -57,6 +57,15 @@ MongoClient.connect(`mongodb+srv://${MONGODB_USER}:${MONGODB_PWD}@cluster0.nk23j
                     res.redirect("/")
                 })
                 .catch(error => console.error(error))
+        })
+        app.delete("/delete", (req,res)=>{
+            quoteCollection.deleteOne(
+               {quoteBox: req.body.quote}
+            )
+            .then(result=> {
+                res.json(`Deleted ${req.body.quote}`)
+            })
+            .catch(err=> console.log(`Error with delete on Server-side: ${err}`))
         })
         app.listen(PORT, ()=>{
             console.log(`Listening on port: ${PORT}`);
