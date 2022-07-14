@@ -6,6 +6,7 @@ const templateDeleteBtn = document.getElementById("deleteBtn-0");
 templateQuoteBtn.style.display = "none";
 templateDeleteBtn.style.display = "none";
 templateQuoteString.style.display = "none";
+templateQuoteString.parentElement.style.display = "none"
 
 const QUOTE_DATA = {
     "quote": "One cannot step twice into the same river"
