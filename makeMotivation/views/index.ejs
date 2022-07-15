@@ -7,15 +7,20 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Make Motivation</title>
 </head>
 <body>
-    <h1>Make Motivation</h1>
-    <form action="/motivate" method="POST">
-        <input type="text" placeholder="Enter quote here" name="quoteBox">
-        <button class="submit-btn" type="submit">Submit</button>
-    </form>
+    <section class="heading-section">
+        <h1>Make Motivation</h1>
+        <form action="/motivate" method="POST">
+            <div class="search-bar">
+                <input type="text" placeholder="Enter quote here" name="quoteBox">
+                <button class="submit-btn" type="submit"><i class="fa fa-paper-plane"></i></button>
+            </div>
+        </form>
+    </section>
     <section class="quote-section">
         <h2>Words of Motivation</h2>
         <ul class="quote-list">

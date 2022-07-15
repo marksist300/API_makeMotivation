@@ -18,14 +18,18 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+*{
+	box-sizing: border-box;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 html{
-	height: 100vh;
-	width: auto;
+	height: 100%;
+	width: 100%;
+	background-color: #2386d8;
 	background-image: linear-gradient(180deg, #2386d8 15%, #2777c7 42%, #2c2de6 76%);
 	background-repeat: no-repeat;
 }
@@ -34,47 +38,87 @@ body {
 	padding: 2rem .5rem;
 	margin: auto;
 	font-family: "Raleway", sans-serif;
+	font-weight: 500;
 }
 ol, ul {
 	list-style: none;
 }
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+.heading-section{
+	margin: auto;
+	padding: 1rem;
+	width: 90%;
+	box-shadow: 2px 3px 5px;
+	border-radius: 1rem;
 }
 
 h1{
-	margin: auto;
+	/* margin: auto; */
 	text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
 	font-family: "Poppins";
 }
 
-section{
-	margin: 1.5rem 0;
+form {
+	margin: auto;
+}
+.search-bar{
+	width: 20rem;
+	margin:auto;
+}
+
+.search-bar >input{
+	border: none;
+	border-radius: 3px;
+	position: relative;
+	width: 99%;
+	font-size: 1rem;
+	font-family: "Raleway";
+}
+
+
+
+.search-bar >input:focus{
+	outline: none;
+}
+
+.submit-btn{
+	position: relative;
+	background: transparent;
+	font-size: 1;
+	border: none;
+	color: rgb(106, 111, 117);
+	bottom: 1.16rem;
+	left: 18.35rem;
+}
+.submit-btn:hover{
+	color: #2777c7;
+}
+
+.quote-section{
+	margin: 2rem auto;
+}
+
+h2{
+	padding-left: 5.5%;
+	font-size: 1.5rem;
 }
 
 .quote-list{
-	margin: .5rem 0;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 .quote{
-	margin: .35rem auto;
-	background-color: rgb(200, 207, 212);
+	margin: .5rem auto;
+	background-color: rgba(231, 238, 245, 0.921);
 	padding: 1rem 1rem .2rem 1rem;
 	text-align: center;
 	border: 1px solid navy;
-	border-radius: 2rem;
-	width: 80%;
+	border-radius: 1rem;
+	width: 90%;
 	line-height: 1.25rem;
+	font-size: 1.2rem;
 }
 
 .quote-buttons{
@@ -82,8 +126,16 @@ section{
 	margin: 1rem 0;
 }
 
-button{
-	padding: .2rem;
-	border-radius: 4px;
+.btn{
+	padding: .25rem;
+	border-radius: 3px;
 	border: none;
+	font-weight: 500;
+	background-color: rgba(189, 196, 203, 0.98);
 } 
+.btn:hover{
+	background-color: rgba(231, 238, 245, 0.96);
+	box-shadow: 1px 2px 4px rgb(132, 137, 143);
+	transition: 300ms;
+}
+
