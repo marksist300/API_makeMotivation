@@ -16,7 +16,9 @@
         <h1>Make Motivation</h1>
         <form action="/motivate" method="POST">
             <div class="search-bar">
-                <input type="text" placeholder="Enter quote here" name="quoteBox">
+                <input type="text" placeholder="Enter quote here" name="quoteBox" required 
+                oninvalid="this.setCustomValidity('Please Enter a Quote First')"
+                oninput="this.setCustomValidity('')"/>
                 <button class="submit-btn" type="submit"><i class="fa fa-paper-plane"></i></button>
             </div>
         </form>
