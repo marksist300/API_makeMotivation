@@ -76,7 +76,7 @@ form {
 	border: none;
 	border-radius: 3px;
 	position: relative;
-	width: 99%;
+	width: 80%;
 	font-size: 1rem;
 	font-family: "Raleway";
 }
@@ -94,7 +94,7 @@ form {
 	border: none;
 	color: rgb(106, 111, 117);
 	bottom: 1.16rem;
-	left: 18.35rem;
+	left: 14.35rem;
 }
 .submit-btn:hover{
 	color: #2777c7;

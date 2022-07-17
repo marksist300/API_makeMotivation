@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser")
 const MongoClient = require("mongodb").MongoClient;
-const MONGO_KEY = require("./keys.json");
 const { request } = require("express");
 require('dotenv').config();
 const PORT = 3000;
@@ -64,7 +63,7 @@ MongoClient.connect(MONGO_DB_CONNECTION, {useUnifiedTopology: true})
             })
             .catch(err=> console.log(`Error with delete on Server-side: ${err}`))
         })
-        app.listen(PORT, ()=>{
+        app.listen(process.env.PORT || PORT, ()=>{
             console.log(`Listening on port: ${PORT}`);
         });
     })
