@@ -4,15 +4,13 @@ const bodyParser = require("body-parser")
 const MongoClient = require("mongodb").MongoClient;
 const MONGO_KEY = require("./keys.json");
 const { request } = require("express");
-const MONGODB_PWD = MONGO_KEY.MongoDB_Secret;
-const MONGODB_USER = MONGO_KEY.MongoDB_User;
+require('dotenv').config();
 const PORT = 3000;
-
+const MONGO_DB_CONNECTION = process.env.MONGODB_KEY;
 
 app.set("view engine", "ejs");
 app.use(express.static('public'));
-MongoClient.connect(`mongodb+srv://${MONGODB_USER}:${MONGODB_PWD}@cluster0.nk23j.mongodb.net/motivatorMaker?retryWrites=true&w=majority`,
- {useUnifiedTopology: true})
+MongoClient.connect(MONGO_DB_CONNECTION, {useUnifiedTopology: true})
     .then(client => {
         console.log('Connection to database established...')
         const db = client.db("motivatorMaker");
@@ -34,7 +32,7 @@ MongoClient.connect(`mongodb+srv://${MONGODB_USER}:${MONGODB_PWD}@cluster0.nk23j
             let quote = req.body;
             quoteCollection.insertOne(quote)
             .then(data=> {
-                // console.log(`Data: ${data}`)
+                console.log(`Data: ${data}`)
                 res.redirect("/");
             })
             .catch(err=> console.log(`POST Error: ${err}`))

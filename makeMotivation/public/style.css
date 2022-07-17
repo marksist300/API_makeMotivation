@@ -26,10 +26,15 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-html{
+body{
 	height: 100%;
 	width: 100%;
 	background-color: #2386d8;
+	background-image: linear-gradient(180deg, #2386d8 15%, #2777c7 42%, #2c2de6 76%);
+	background-image: linear-gradient(180deg, #2386d8 15%, #2777c7 42%, #2c2de6 76%);
+	background-image: -moz-linear-gradient(180deg, #2386d8 15%, #2777c7 42%, #2c2de6 76%);
+	background-image: -webkit-linear-gradient(180deg, #2386d8 15%, #2777c7 42%, #2c2de6 76%);
+	background-image: -ms-linear-gradient(180deg, #2386d8 15%, #2777c7 42%, #2c2de6 76%);
 	background-image: linear-gradient(180deg, #2386d8 15%, #2777c7 42%, #2c2de6 76%);
 	background-repeat: no-repeat;
 }
