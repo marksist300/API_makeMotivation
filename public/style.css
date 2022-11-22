@@ -86,7 +86,7 @@ h1{
 	border: none;
 	color: rgb(106, 111, 117);
 	right: 2px;
-	bottom: 2px;
+	bottom: 4px;
 }
 .submit-btn:hover{
 	color: #2777c7;
@@ -94,7 +94,7 @@ h1{
 
 @media not all and (max-height: 899px) and (min-resolution:.1dpi) {
 	.submit-btn{
-		bottom: 1.59rem;
+		bottom: 5rem;
 		left: 12.75rem;
 	}
 }
