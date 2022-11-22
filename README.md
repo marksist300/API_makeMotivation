@@ -2,7 +2,7 @@
 
 Make Motivate is a quotation logging CRUD app. Users can input quotes they find motivational, update previously input quotes to a randomly selected motivational quote, they can also delete quotes as they wish. The idea was simply to build a pocket friendly quotation book that's always with people (i.e. available from their phone screens) and can provide them with a little 'pick-me-up' of motivational wisdom in those moment when it may be necessary throughout the day (for example to boost confidence before a meeting, starting a day at work, or simply in moments where their confidence could do with a little boost).
 
-**Link to project:** https://make-motivate-api.herokuapp.com/
+**Link to project:** https://make-motivation.onrender.com
 ![MakeMotivate](https://user-images.githubusercontent.com/88390425/179469069-ea8dea0b-12c9-438f-94be-7959ae0dd43a.jpg)
 
 ## How It's Made:
