@@ -92,12 +92,12 @@ h1{
 	color: #2777c7;
 }
 
-@media not all and (max-height: 899px) and (min-resolution:.1dpi) {
+/* @media not all and (max-height: 899px) and (min-resolution:.1dpi) {
 	.submit-btn{
-		bottom: 5rem;
-		left: 12.75rem;
+		right: 3px;
+		bottom 5px;
 	}
-}
+} */
 
 
 .quote-section{
