@@ -92,6 +92,14 @@ h1{
 	color: #2777c7;
 }
 
+@media not all and (max-height: 899px) and (min-resolution:.1dpi) {
+	.submit-btn{
+		bottom: 1.59rem;
+		left: 12.75rem;
+	}
+}
+
+
 .quote-section{
 	margin: 2rem auto;
 }
@@ -143,21 +151,23 @@ h2{
 	justify-content: center;
 	gap: 1rem;
 	flex-wrap: wrap;
+	color: navy;
 }
 
 @media screen and (max-width: 300px){
 	.quote-buttons{
 		flex-direction: column;
-		gap: .3rem;
+		gap: .1rem;
 	}
 }
 
 .btn{
-	padding: .5rem;
+	padding: .5rem .3rem;
 	border-radius: .3rem;
 	border: none;
 	font-weight: 500;
 	background-color: rgba(193, 211, 230, 0.98);
+	color: navy;
 } 
 .btn:hover{
 	background-color: rgba(231, 238, 245, 0.96);
