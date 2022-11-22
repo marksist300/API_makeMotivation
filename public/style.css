@@ -85,18 +85,11 @@ h1{
 	font-size: .8rem;
 	border: none;
 	color: rgb(106, 111, 117);
-	right: -2px;
+	right: -4px;
 	bottom: 4px;
 }
 .submit-btn:hover{
 	color: #2777c7;
-}
-
-@media not all and (max-height: 899px) and (min-resolution:.1dpi) {
-	.submit-btn{
-		right: -5px;
-		bottom: 5px;
-	}
 }
 
 
