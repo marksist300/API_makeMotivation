@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +28,7 @@
         <h2>Words of Motivation</h2>
         <ul class="quote-list">
             <% for(let i= 0; i<quotes.length; i++) {%>
-                <li class="quote">
+                <li class="quote angle-left">
                     <q class="quote-item" id="quote-<%=i%>"><%= quotes[i].quoteBox %></q>
                     <div class="quote-buttons">
                         <button id="random-quote-update<%=i%>" class="update-quote btn">Update with Random Quote</button>
