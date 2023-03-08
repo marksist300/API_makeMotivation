@@ -16,7 +16,7 @@ This project was an idea to improve and practice building CRUD apps with minimal
 ## Optimisations
 There's plenty of room for optimisations: the CSS could certainly have more time put into it; likewise introducing other libraries such as React could make the rendering more dynamic, quicker and efficient, without having to generate a page refresh on each change via the JS. Although the intention of this project was to be 'bare-bones': not to use frameworks beyond Express.
 
-I didn't add the authors of the quotes to the quotation blocks, as I wanted to place focus on the actual words and their meaning and effects, as well as allow users to impu their own personal quotes without the need for attribution. However, one possible improvement would be to add the author underneath the quotes, so the quote can be attibuted to its correct author.
+I didn't add the authors of the quotes to the quotation blocks, as I wanted to place focus on the actual words and their meaning and effects, as well as allow users to input their own personal quotes without the need for attribution. However, one possible improvement would be to add the author underneath the quotes, so the quote can be attibuted to its correct author.
 
 ## Lessons Learned:
 
